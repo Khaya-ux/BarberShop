@@ -1,0 +1,20 @@
+services:
+  - type: web
+    name: barbershop-api
+    env: node
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+    healthCheckPath: /api/health
+
+  - type: web
+    name: barbershop-frontend
+    env: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://barbershop-api.onrender.com/api
+

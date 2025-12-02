@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import BookingForm from "./BookingForm";
-
-const API_BASE_URL = "http://localhost:3001/api";
+import { API_BASE_URL } from "../config";
 
 function Booking() {
   const [resources, setResources] = useState([]);
