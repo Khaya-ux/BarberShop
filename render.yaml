@@ -16,5 +16,5 @@ services:
     staticPublishPath: ./dist
     envVars:
       - key: VITE_API_URL
-        value: https://barbershop-api.onrender.com/api
+        value: https://barbershop-api-lrv8.onrender.com/api
 
