@@ -50,7 +50,7 @@ function BookingForm({ date, resourceId, resourceName, timeSlot, onClose, onSucc
       onSuccess();
     } catch (err) {
       const errorMsg = err.message.includes("fetch")
-        ? "Cannot connect to server. Make sure the backend is running on port 3001."
+        ? "Cannot connect to server. Please check your internet connection."
         : err.message;
       setError(errorMsg);
     } finally {

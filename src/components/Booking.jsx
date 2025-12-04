@@ -42,7 +42,7 @@ function Booking() {
       }
     } catch (err) {
       const errorMsg = err.message.includes("fetch")
-        ? "Cannot connect to server. Make sure the backend is running on port 3001."
+        ? "Cannot connect to server. Please check your internet connection."
         : err.message;
       setError(`Failed to load barbers: ${errorMsg}`);
       console.error("Error fetching resources:", err);
@@ -64,7 +64,7 @@ function Booking() {
       setAvailableSlots(data.availableSlots || []);
     } catch (err) {
       const errorMsg = err.message.includes("fetch")
-        ? "Cannot connect to server. Make sure the backend is running on port 3001."
+        ? "Cannot connect to server. Please check your internet connection."
         : err.message;
       setError(errorMsg);
       setAvailableSlots([]);

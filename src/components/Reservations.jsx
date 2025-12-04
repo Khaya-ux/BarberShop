@@ -39,7 +39,7 @@ function Reservations() {
       }
     } catch (err) {
       const errorMsg = err.message.includes("fetch")
-        ? "Cannot connect to server. Make sure the backend is running on port 3001."
+        ? "Cannot connect to server. Please check your internet connection."
         : err.message;
       setError(`Failed to load barbers: ${errorMsg}`);
       console.error("Error fetching resources:", err);
@@ -58,7 +58,7 @@ function Reservations() {
       setBookings(data.bookings || []);
     } catch (err) {
       const errorMsg = err.message.includes("fetch")
-        ? "Cannot connect to server. Make sure the backend is running on port 3001."
+        ? "Cannot connect to server. Please check your internet connection."
         : err.message;
       setError(`Failed to fetch bookings: ${errorMsg}`);
       setBookings([]);
@@ -81,7 +81,7 @@ function Reservations() {
       setBookings(data.bookings || []);
     } catch (err) {
       const errorMsg = err.message.includes("fetch")
-        ? "Cannot connect to server. Make sure the backend is running on port 3001."
+        ? "Cannot connect to server. Please check your internet connection."
         : err.message;
       setError(`Failed to fetch bookings: ${errorMsg}`);
       setBookings([]);
@@ -221,12 +221,7 @@ function Reservations() {
               <div className="text-red-300 font-semibold mb-2">⚠️ Connection Error</div>
               <div className="text-red-300 text-sm mb-3">{error}</div>
               <div className="text-red-200 text-xs">
-                <p className="mb-1">To fix this:</p>
-                <ol className="list-decimal list-inside space-y-1 ml-2">
-                  <li>Open a terminal in the project directory</li>
-                  <li>Run: <code className="bg-black/40 px-2 py-1 rounded">npm run dev:all</code></li>
-                  <li>Or run separately: <code className="bg-black/40 px-2 py-1 rounded">npm run dev:server</code> in one terminal and <code className="bg-black/40 px-2 py-1 rounded">npm run dev</code> in another</li>
-                </ol>
+                <p className="mb-1">Please ensure you have an active internet connection and try again.</p>
               </div>
             </div>
           )}
